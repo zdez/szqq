@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <Button 
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more"/>
+        <EditText android:id="@+id/input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/send_content"
+            android:layout_weight="1"/>
+        <Button android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            />
+    </LinearLayout>
+    
+    <LinearLayout android:id="@+id/more_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/input_layout"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <Button android:id="@+id/camara"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/camara"/>
+        <Button android:id="@+id/record"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/record"/>
+        <Button android:id="@+id/file"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/file"/>
+    </LinearLayout>
+    
+    <LinearLayout android:id="@+id/file_layout"
+        android:layout_above="@id/input_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/camera_preview"/>
+            <Button 
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/delete"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:id="@+id/record_preview"
+                android:text="record"/>
+            <Button android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/delete"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="file"
+                android:id="@+id/file_preview"/>
+            <Button android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/delete"/>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <ListView android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/file_layout"
+         />
+
+</RelativeLayout>
